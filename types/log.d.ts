@@ -1,5 +1,5 @@
 type Log = {
-  date: Date;
+  date: String;
   bean: Bean;
   rating: Rating;
   brewTime: Number;
