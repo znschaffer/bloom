@@ -1,43 +1,42 @@
-import { useEffect, useState } from "react";
+import { Timer_data } from "@/context/context";
+import { useContext, useEffect, useState } from "react";
 import Log from "./log";
 
 export default function Timer() {
-  const [time, setTime] = useState(0);
-  const [isBrewing, setIsBrewing] = useState(false);
+  const { timer, setTimer } = useContext(Timer_data);
 
   function toggle() {
-    setIsBrewing(!isBrewing);
+    setTimer({ ...timer, brewing: !timer.brewing });
   }
 
   function reset() {
-    setTime(0);
-    setIsBrewing(false);
+    setTimer({ brewing: false, time: 0 });
   }
 
   useEffect(() => {
     let interval: undefined | NodeJS.Timer = undefined;
-    if (isBrewing) {
+    if (timer.brewing) {
       interval = setInterval(() => {
-        setTime((time) => time + 1);
+        setTimer({ ...timer, time: timer.time + 1 });
       }, 1000);
-    } else if (!isBrewing && time !== 0) {
+    } else if (!timer.brewing && timer.time !== 0) {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [isBrewing, time]);
+  }, [timer]);
 
   return (
     <>
-      <div className="card w-96 bg-base-200 shadow-xl">
+      <div className="card flex-shrink-0 max-w-sm bg-base-100 ">
         <div className="card-body">
           <span className="countdown font-mono text-4xl">
-            <span style={{ "--value": time }}></span>
+            <span style={{ "--value": timer.time }}></span>
           </span>
           <div className="card-actions justify-end">
             <div className="btn-group">
-              {!isBrewing && time !== 0 ? (
+              {!timer.brewing && timer.time !== 0 ? (
                 <>
-                  <Log time={time} />
+                  <Log time={timer.time} />
                   <button onClick={reset} className="btn btn-sm">
                     Reset
                   </button>
@@ -45,7 +44,7 @@ export default function Timer() {
               ) : (
                 <>
                   <button onClick={toggle} className="btn btn-sm">
-                    {isBrewing ? "End" : "Brew"}
+                    {timer.brewing ? "End" : "Brew"}
                   </button>
                   <button onClick={reset} className="btn btn-sm">
                     Reset
