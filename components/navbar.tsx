@@ -11,7 +11,7 @@ export default function Navbar() {
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link href="/history">History</Link>
+            <Link href="/recipes">Recipes</Link>
           </li>
         </ul>
       </div>
