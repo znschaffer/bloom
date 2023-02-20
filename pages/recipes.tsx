@@ -76,7 +76,7 @@ export default function Recipes() {
     if (recipeData) {
       setRecipes(recipeData);
     }
-    if (Object.keys(recipeData).length == 0) {
+    if (!recipeData || Object.keys(recipeData).length == 0) {
       setRecipes(baseRecipes);
     }
   }, []);

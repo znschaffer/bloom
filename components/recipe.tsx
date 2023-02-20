@@ -44,7 +44,7 @@ export default function Recipe({ setRecipe }) {
     if (recipeData) {
       setRecipes(recipeData);
     }
-    if (Object.keys(recipeData).length == 0) {
+    if (!recipeData || Object.keys(recipeData).length == 0) {
       setRecipes(baseRecipes);
     }
   }, []);
