@@ -1,9 +1,3 @@
-import Brew from "./brew";
-import Timer from "./timer";
-import History from "./history";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
-
 export default function Hero() {
   return (
     <div className="md:hero bg-base">
