@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
 
-function LogCard(log: Log) {
-  console.log(log);
+function LogCard(log: Log, index: Number) {
   return (
-    <tr>
-      <th>1</th>
+    <tr key={index} className="table-row">
       <td>{log.brewTime}</td>
       <td>{log.brewRatio.water}</td>
       <td>{log.brewRatio.beans}</td>
-      <td>{log.bean.name}</td>
       <td>{log.rating}</td>
     </tr>
   );
@@ -31,23 +28,19 @@ export default function History() {
     }
   }, [log]);
 
-  console.log(log);
-
   return (
-    <div className="max-w-lg m-auto">
-      <h1>Brewing Log</h1>
-      <table className="table w-full">
+    <div className="m-auto">
+      <table className="table table-auto table-zebra table-hover">
+        <caption>Saved Brews</caption>
         <thead>
           <tr>
-            <th></th>
             <th>Brew Time</th>
-            <th>Water In</th>
-            <th>Coffee Out</th>
-            <th>Bean</th>
+            <th>Water</th>
+            <th>Beans</th>
             <th>Rating</th>
           </tr>
         </thead>
-        <tbody>{log.map((log) => LogCard(log))}</tbody>
+        <tbody>{log.map((log, i) => LogCard(log, i))}</tbody>
       </table>
     </div>
   );
