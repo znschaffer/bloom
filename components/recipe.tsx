@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Timer from "./timer";
 
 export const baseRecipes = {
   "James Hoffman V60": {

@@ -1,11 +1,11 @@
 type Bean = {
-  name: String;
-  roaster: String;
+  name: string;
+  roaster: string;
 };
 
 type Rating = "1" | "2" | "3" | "4" | "5";
 
 type Ratio = {
-  water: Number;
-  beans: Number;
+  water: number;
+  beans: number;
 };

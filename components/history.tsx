@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function LogCard(log: Log, index: Number) {
+function LogCard(log: Log, index: number) {
   return (
     <tr key={index} className="table-row">
       <td>{log.brewTime}</td>

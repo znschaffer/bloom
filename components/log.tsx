@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 
-export default function Log({ time }) {
+export default function Log({ time }: { time: number }) {
   let logD: Log = {
     date: Date.toString(),
     bean: {

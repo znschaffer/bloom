@@ -1,13 +1,13 @@
 type Recipe = {
-  name: String;
-  author: String;
+  name: string;
+  author: string;
   method: "Pour Over" | null;
   ratio: Ratio;
-  link: String | null;
+  link: string | null;
   steps: Step[];
 };
 
 type Step = {
-  time: Number;
-  action: String;
+  time: number;
+  action: string;
 };

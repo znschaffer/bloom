@@ -13,12 +13,12 @@ export default function Timer() {
     setTimer({ brewing: false, time: 0 });
   }
 
-  function timeAsSeconds(time: Number) {
+  function timeAsSeconds(time: number) {
     var seconds = time % 60;
     return seconds;
   }
 
-  function timeAsMinutes(time: Number) {
+  function timeAsMinutes(time: number) {
     var minutes = Math.floor(time / 60);
     return minutes;
   }

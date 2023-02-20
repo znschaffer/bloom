@@ -1,7 +1,7 @@
 type Log = {
-  date: String;
+  date: string;
   bean: Bean;
   rating: Rating;
-  brewTime: Number;
+  brewTime: number;
   brewRatio: Ratio;
 };
