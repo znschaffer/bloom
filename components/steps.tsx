@@ -1,7 +1,7 @@
 import { Timer_data } from "@/context/context";
 import { useContext } from "react";
 
-export default function Steps({ recipe }: { recipe: Recipe }) {
+export default function Steps({ recipe }: { recipe: Recipe | null }) {
   const { timer, setTimer } = useContext(Timer_data);
   if (!recipe) {
     return <></>;
