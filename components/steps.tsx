@@ -2,6 +2,7 @@ import { Timer_data } from "@/context/context";
 import { useContext } from "react";
 
 export default function Steps({ recipe }: { recipe: Recipe }) {
+  const { timer, setTimer } = useContext(Timer_data);
   if (!recipe) {
     return <></>;
   }
@@ -17,8 +18,6 @@ export default function Steps({ recipe }: { recipe: Recipe }) {
     }
     return minutes + ":" + seconds;
   }
-
-  const { timer, setTimer } = useContext(Timer_data);
 
   return (
     <div className="flex flex-col gap-4 ">

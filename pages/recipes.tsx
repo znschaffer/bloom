@@ -61,8 +61,8 @@ export default function Recipes() {
           </thead>
           <tbody>
             {recipe.steps.map((step: Step, i: number) => (
-              <tr>
-                <td key={i}>{timeToMinutesSeconds(step.time)}</td>
+              <tr key={i}>
+                <td>{timeToMinutesSeconds(step.time)}</td>
                 <td>{step.action} </td>
               </tr>
             ))}

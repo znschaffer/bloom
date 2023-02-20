@@ -26,7 +26,7 @@ export default function History() {
     if (log !== initialState) {
       localStorage.setItem("log", JSON.stringify(log));
     }
-  }, [log]);
+  }, [log, setLog]);
 
   return (
     <div className="m-auto">

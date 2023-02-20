@@ -33,7 +33,7 @@ export default function Timer() {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [timer]);
+  }, [timer, setTimer]);
 
   return (
     <>

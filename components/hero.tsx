@@ -1,9 +1,13 @@
+import Image from "next/image";
 export default function Hero() {
   return (
     <div className="md:hero bg-base">
       <div className="hero-content  gap-8 flex-col lg:flex-row ">
-        <img
-          src="https://images.unsplash.com/photo-1618263665307-b31318809fae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+        <Image
+          width={750}
+          height={1120}
+          alt="Picture of Chemex coffee brewer full of coffee being poured into mug."
+          src="/coffee-pour.jpeg"
           className="max-w-sm max-h-sm rounded-lg "
         />
         <div className="prose">
