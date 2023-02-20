@@ -16,7 +16,6 @@ export default function Log({ time }) {
   };
 
   const [logData, setLogData] = useState(logD);
-  console.log(time);
 
   function onChangeRating(e) {
     setLogData({ ...logData, rating: e.target.value });
@@ -41,7 +40,6 @@ export default function Log({ time }) {
   }
 
   function handleSubmit() {
-    console.log(logData);
     let localLogData = JSON.parse(localStorage.getItem("log"));
     if (localLogData) {
       localLogData.push(logData);
@@ -54,8 +52,8 @@ export default function Log({ time }) {
   }
   return (
     <>
-      <label htmlFor="log-brew" className="btn btn-sm">
-        Log
+      <label htmlFor="log-brew" className="btn btn-ghost btn-sm">
+        Save
       </label>
 
       <input type="checkbox" id="log-brew" className="modal-toggle" />
