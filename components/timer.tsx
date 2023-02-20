@@ -13,6 +13,16 @@ export default function Timer() {
     setTimer({ brewing: false, time: 0 });
   }
 
+  function timeAsSeconds(time: Number) {
+    var seconds = time % 60;
+    return seconds;
+  }
+
+  function timeAsMinutes(time: Number) {
+    var minutes = Math.floor(time / 60);
+    return minutes;
+  }
+
   useEffect(() => {
     let interval: undefined | NodeJS.Timer = undefined;
     if (timer.brewing) {
@@ -27,26 +37,36 @@ export default function Timer() {
 
   return (
     <>
-      <div className="card flex-shrink-0 max-w-sm bg-base-100 ">
+      <div className="card no-animation w-64  bg-base-100 ">
         <div className="card-body">
-          <span className="countdown font-mono text-4xl">
-            <span style={{ "--value": timer.time }}></span>
+          <span className="countdown self-center text-4xl">
+            <span
+              style={{
+                "--value": timeAsMinutes(timer.time),
+              }}
+            ></span>
+            :
+            <span
+              style={{
+                "--value": timeAsSeconds(timer.time),
+              }}
+            ></span>
           </span>
-          <div className="card-actions justify-end">
-            <div className="btn-group">
+          <div className="card-actions m-auto">
+            <div className="btn-group-horizontal btn-group">
               {!timer.brewing && timer.time !== 0 ? (
                 <>
                   <Log time={timer.time} />
-                  <button onClick={reset} className="btn btn-sm">
+                  <button onClick={reset} className="btn btn-ghost btn-sm">
                     Reset
                   </button>
                 </>
               ) : (
                 <>
-                  <button onClick={toggle} className="btn btn-sm">
-                    {timer.brewing ? "End" : "Brew"}
+                  <button onClick={toggle} className="btn btn-ghost btn-sm">
+                    {timer.brewing ? "Stop" : "Brew"}
                   </button>
-                  <button onClick={reset} className="btn btn-sm">
+                  <button onClick={reset} className="btn btn-ghost btn-sm">
                     Reset
                   </button>
                 </>
