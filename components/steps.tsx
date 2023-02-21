@@ -20,7 +20,7 @@ export default function Steps({ recipe }: { recipe: Recipe | null }) {
   }
 
   return (
-    <div className="flex flex-col gap-4 ">
+    <div className="flex flex-col gap-4 lg:w-full ">
       <div className=" flex flex-col gap-2 items-center">
         <div className="flex flex-row gap-2">
           <span className="badge ">{recipe.method}</span>

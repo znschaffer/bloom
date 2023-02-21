@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
       <main className={"flex flex-col"}>
         <Hero />
-        <div className={"hero"}>
+        <div className={"hero m-4"}>
           <Brew />
         </div>
         <History />
