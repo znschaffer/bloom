@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { baseRecipes } from "@/components/recipe";
+import Head from "next/head";
 
 function timeToMinutesSeconds(time: number) {
   var minutes = Math.floor(time / 60);
@@ -161,6 +162,9 @@ export default function Recipes() {
 
   return (
     <>
+      <Head>
+        <title>Bloom Recipes</title>
+      </Head>
       <div className="drawer drawer-mobile">
         <input id="drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
