@@ -34,6 +34,42 @@ export const baseRecipes = {
       { time: 180, action: "Done!" },
     ],
   },
+  "Tetsu Kasuya 4:6": {
+    name: "Tetsu Kasuya 4:6",
+    author: "Tetsu Kasuya",
+    method: "Pour Over",
+    ratio: {
+      water: 300,
+      beans: 20,
+    },
+    link: "https://www.youtube.com/watch?v=wmCW8xSWGZY",
+    steps: [
+      { time: 0, action: "Pour 60g" },
+      { time: 45, action: "Pour 60g" },
+      { time: 90, action: "Pour 60g" },
+      { time: 135, action: "Pour 60g" },
+      { time: 180, action: "Pour 60g" },
+    ],
+  },
+  Intelligentsia: {
+    name: "Intelligentsia",
+    author: "Intelligentsia",
+    method: "Pour Over",
+    ratio: {
+      water: 468,
+      beans: 26,
+    },
+    link: "https://www.intelligentsiacoffee.com/v60-pourover-brew-guide",
+    steps: [
+      { time: 0, action: "Pour 52g" },
+      { time: 60, action: "Pour 70g" },
+      { time: 70, action: "Pour 70g" },
+      { time: 80, action: "Pour 70g" },
+      { time: 90, action: "Pour 70g" },
+      { time: 100, action: "Pour 70g" },
+      { time: 100, action: "Pour 70g" },
+    ],
+  },
 };
 
 export default function Recipe({ setRecipe }) {
